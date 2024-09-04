@@ -1,6 +1,6 @@
 # 基于大模型的文本内容智能评判
 
-## 1.数据处理
+## 1. 数据准备
 
 ```python
 import pandas as pd
@@ -59,5 +59,5 @@ def convert_to_builtin_type(obj):
 with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
     json.dump(res, f, ensure_ascii=False, indent=4, default=convert_to_builtin_type)
 ```
-## 推理
+## 2. 推理
 见：[https://github.com/yaosenJ/NoteNest/blob/main/llm.ipynb](https://github.com/yaosenJ/NoteNest/blob/main/llm.ipynb)
