@@ -71,6 +71,9 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_20b|baseline|26|43|0.5319|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=1 (500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3|
 | internlm2_5_chat_20b|baseline|26|43|0.6099|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=2 (1000/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3 |
 | internlm2_5_chat_20b|baseline|26|43|0.6029|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=3 (1500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3|
+| internlm2_5_chat_20b|baseline|-|-|0.5997|上面三个模型相加平均打分|
+| internlm2_5_chat_20b|baseline|-|-|0.6049|上面后两个模型相加平均打分|
+
 
 ## 3.2 直接结合推理
 
