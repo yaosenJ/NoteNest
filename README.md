@@ -74,7 +74,7 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_20b|qlora/xtuner|-|-|0.5997|上面三个模型相加平均打分|
 | internlm2_5_chat_20b|qlora/xtuner|-|-|0.6049|上面后两个模型相加平均打分|
 | internlm2_5_chat_7b|full|2*80G|-|0.00|耗时8个小时全参训练，1-10epoch效果极差，重复输出内容。|
-| qwen2_7b_Instruct|lora|36G|-||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32lora_dropout=0.1|
+| qwen2_7b_Instruct|lora|36G|-||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32lora_dropout=0.1,(500/1090step)|
 
 
 ## 3.2 直接结合推理
