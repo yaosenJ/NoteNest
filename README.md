@@ -74,7 +74,7 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_20b|baseline|-|-|0.5997|上面三个模型相加平均打分|
 | internlm2_5_chat_20b|baseline|-|-|0.6049|上面后两个模型相加平均打分|
 | internlm2_5_chat_7b|full|2*80G|-|0.00|耗时8个小时全参训练，1-10epoch效果极差，重复输出内容。|
-| qwen2_7b_Instruct|lora|31G|-|0.00||
+| qwen2_7b_Instruct|lora|31G|-|||
 
 
 ## 3.2 直接结合推理
