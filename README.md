@@ -68,11 +68,12 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 
 |底座模型     | 方法    |训练占用显存/G| 推理占用显存/G| 分数| 备注|
 | :-------: | :--------------: | :------: | :---: | :---------------: |:---------------: |
-| internlm2_5_chat_20b|baseline|26|43|0.5319|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=1 (500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3|
-| internlm2_5_chat_20b|baseline|26|43|0.6099|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=2 (1000/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3 |
-| internlm2_5_chat_20b|baseline|26|43|0.6029|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=3 (1500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformers原生推理 deepseed zero3|
+| internlm2_5_chat_20b|baseline|26|43|0.5319|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=1 (500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformer原生推理 deepseed zero3|
+| internlm2_5_chat_20b|baseline|26|43|0.6099|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=2 (1000/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformer原生推理 deepseed zero3 |
+| internlm2_5_chat_20b|baseline|26|43|0.6029|max_length = 2048 batch_size = 2 accumulative_counts=4 epoch=3 (1500/7110step) max-epoch=10 lr = 2e-4 r=16 lora_alpha=32 lora_dropout=0.05 transformer原生推理 deepseed zero3|
 | internlm2_5_chat_20b|baseline|-|-|0.5997|上面三个模型相加平均打分|
 | internlm2_5_chat_20b|baseline|-|-|0.6049|上面后两个模型相加平均打分|
+| internlm2_5_chat_7b|full|2*80G|-|0.00|耗时8个小时全参训练，1-10epoch效果极差，重复输出内容。|
 
 
 ## 3.2 直接结合推理
