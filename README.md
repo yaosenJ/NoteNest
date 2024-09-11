@@ -76,7 +76,7 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_7b|full|2*80G|-|0.|耗时8个小时全参训练，1-10epoch效果极差，重复输出内容。|
 | qwen2_7b_Instruct|lora|36G|30G|0.5948|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1,(500/1090step)|
 | glm4_9b_chat|lora|||0.6644|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1000/1090step)|
-| internlm2_5_chat_20b|lora|70G|||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1|
+| internlm2_5_chat_20b|lora|70G||0.6516|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1000/1526step)|
 
 
 ## 3.2 直接结合推理
