@@ -79,6 +79,7 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_20b|lora|73G|46G|0.6516|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1000/1526step),time=17:55|
 | internlm2_5_chat_20b|lora|73G|46G|0.6538|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1500/1526step),time=17:45|
 |Baichuan2-13B-Chat|lora|70G|71G||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["W_pack", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1|
+|gemma-2-9b-it|lora||||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1|
 
 
 
