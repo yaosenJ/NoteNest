@@ -80,7 +80,9 @@ with open('./data/llm_train.json', mode='w', encoding='utf-8') as f:
 | internlm2_5_chat_20b|lora|73G|46G|0.6538|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1500/1526step),time=17:45|
 |Baichuan2-13B-Chat|lora|70G|71G|0.5773|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["W_pack", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1|
 |gemma-2-9b-it|lora|||0.6660|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=5, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1,(1000/1090step)|
-| internlm2_5_chat_7b|lora|38G|18G-24G||per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=10, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1|
+|internlm2_5_chat_7b|lora|38G|18G-24G|0.6504|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=10, learning_rate=1e-4, target_modules=["query_key_value", "dense", "dense_h_to_4h", "dense_4h_to_h"],r=8,lora_alpha=32,lora_dropout=0.1,(1502/2180step)|
+| qwen2_7b_Instruct|lora|36G|29G|0.4327|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1,(1500/1526step)|
+| qwen2_7b_Instruct|lora|36G|29G|0.4261|per_device_train_batch_size=4,gradient_accumulation_steps=4,num_train_epochs=7, learning_rate=1e-4, target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],r=8,lora_alpha=32,lora_dropout=0.1,(1000/1526step)|
 
 
 
