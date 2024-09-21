@@ -98,10 +98,17 @@ python /data/code/main.py
 若推理时，注销官网模型下载的代码，因为在微调的时候已经下载，所以只需要下载上面上传的lora文件即可。注意：若直接推理，不在重新微调，就不需要注释。
 
 ```python
-conda create -n llm python=3.10
-conda activate llm
-pip install pandas transformers peft accelerate sentencepiece datasets tiktoken openpyxl protobuf einops
-python /data/code/main.py
+# os.system('git clone https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat.git /data/user_data/model/glm-4-9b-chat')
+os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/glm4_9B_chat_review_1000_lora.git /data/user_data/lora/glm4_9B_chat_review_1000_lora')
+
+# os.system('git clone https://www.modelscope.cn/qwen/qwen2-7b-instruct.git /data/user_data/model/qwen2-7b-instruct')
+os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/Qwen2_7B_instruct_1000_lora.git /data/user_data/lora/Qwen2_7B_instruct_1000_lora')
+
+# os.system('git clone https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat.git /data/user_data/model/internlm2_5-20b-chat')
+os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/internlm2_5_20B_chat_1500_lora.git /data/user_data/lora/internlm2_5_20B_chat_1500_lora')
+
+# os.system('git clone https://www.modelscope.cn/llm-research/gemma-2-9b-it.git /data/user_data/model/gemma-2-9b-it')
+os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/gemma-2-9b-it_review_1000_lora.git /data/user_data/lora/gemma-2-9b-it_review_1000_lora')
 ```
 
 ### 结果输出
