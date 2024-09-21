@@ -46,7 +46,7 @@
 使用以下命令创建虚拟环境，并安装所需的Python库，最后运行main.py,进行推理复现
 
 ```bash
-conda create -n llm python==3.10
+conda create -n llm python=3.10
 conda activate llm
 pip install pandas transformers peft accelerate sentencepiece datasets tiktoken openpyxl protobuf einops
 python /data/code/main.py
