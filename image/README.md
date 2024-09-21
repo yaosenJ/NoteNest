@@ -39,7 +39,8 @@ pip install pandas transformers peft accelerate sentencepiece datasets tiktoken 
    cd image
    ./run_sft.sh
    ```
-
+**以下为训练代码测试截图**
+![训练结果测试截图](../data/user_data/test_sft.png)
 脚本会自动执行以下操作：
 
 1. 检查 Docker 是否已安装并支持 GPU。
@@ -56,7 +57,8 @@ pip install pandas transformers peft accelerate sentencepiece datasets tiktoken 
    cd image
    ./run_infer.sh
    ```
-
+**以下为推理代码测试截图**
+![训练结果测试截图](../data/user_data/test_infer.png)
 脚本会自动执行以下操作：
 
 1. 检查 Docker 是否已安装并支持 GPU。
@@ -67,5 +69,4 @@ pip install pandas transformers peft accelerate sentencepiece datasets tiktoken 
 
 * **训练结果**：训练模型权重等会被保存在 `data/user_data/sft_lora` 目录下。
 * **预测结果**：预测结果将保存为 `data/prediction_result/result.csv` 文件。
-
 
