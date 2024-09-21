@@ -15,8 +15,19 @@
                 |-- test-B.xlsx
         |-- user_data
                 |-- model
-                |-- lora 
-                |--  
+                         |-- model
+                         |-- model
+                         |-- model
+                         |-- model
+                |-- lora
+                         |-- model
+                         |-- model
+                         |-- model
+                         |-- model
+                |-- glm4_9b_1000.csv
+                |-- qwen2_7b_1000.csv
+                |-- internlm2.5_20b_1500.csv
+                |-- gemma2_9b_1000.csv
         |-- prediction_result
                 |-- result.csv
         |-- code
@@ -29,7 +40,7 @@
         |-- README.md
 
 ```
-
+ 
 ## 环境依赖
 
 项目的运行依赖以下环境和工具,详细配置见 [requirements.txt](./requirements.txt)：
