@@ -11,36 +11,36 @@
         |-- README.md
 |-- data
         |-- raw_data
-                |-- train.csv
-                |-- test-B.xlsx
+                |-- train.csv          # A榜训练集
+                |-- test-B.xlsx        # B榜测试集
         |-- user_data
-                |-- model
-                         |-- model
-                         |-- model
-                         |-- model
-                         |-- model
-                |-- lora
-                         |-- model
-                         |-- model
-                         |-- model
-                         |-- model
-                |-- glm4_9b_1000.csv
-                |-- qwen2_7b_1000.csv
-                |-- internlm2.5_20b_1500.csv
-                |-- gemma2_9b_1000.csv
+                |-- model  # 官方原始模型文件
+                         |-- glm-4-9b-chat    
+                         |-- qwen2-7b-instruct
+                         |-- internlm2_5-20b-chat
+                         |-- gemma-2-9b-it
+                |-- lora  # 模型微调的lora文件
+                         |-- glm4_9B_chat_review_1000_lora  # checkpoint:1000steps
+                         |-- Qwen2_7B_instruct_1000_lora    # checkpoint:1000steps
+                         |-- internlm2_5_20B_chat_1500_lora  # checkpoint:1500steps
+                         |-- gemma-2-9b-it_review_1000_lora  # checkpoint:1000steps
+                |-- glm4_9b_1000.csv  # 使用微调好的glm4_9b模型推理生成文件
+                |-- qwen2_7b_1000.csv  # 使用微调好的qwen2_7b模型推理生成文件
+                |-- internlm2.5_20b_1500.csv   # 使用微调好的internlm2.5_20b模型推理生成文件
+                |-- gemma2_9b_1000.csv   # 使用微调好的gemma2_9b模型推理生成文件
         |-- prediction_result
-                |-- result.csv
+                |-- result.csv  # 四个模型投票，针对B榜测试集的预测结果
         |-- code
-                |-- data_process.py
-                |-- sft.py
-                |-- prompt.py
-                |-- model.py
-                |-- infer.py
-                |-- main.py
+                |-- data_process.py  # 处理成适合模型训练的数据格式脚本
+                |-- sft.py  # 模型微调脚本
+                |-- prompt.py  # 推理时用的prompt脚本
+                |-- model.py  # model、tokenizer加载的脚本
+                |-- infer.py  # 模型推理函数的脚本
+                |-- main.py  # 模型推理的主函数
         |-- README.md
 
 ```
- 
+
 ## 环境依赖
 
 项目的运行依赖以下环境和工具,详细配置见 [requirements.txt](./requirements.txt)：
