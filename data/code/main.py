@@ -9,20 +9,20 @@ import torch
 import os
 
 # 模型下载
-os.system('apt install git')
-os.system('apt install git-lfs')
+# os.system('apt install git')
+# os.system('apt install git-lfs')
 
-os.system('git clone https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat.git /data/user_data/model/glm-4-9b-chat')
-os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/glm4_9B_chat_review_1000_lora.git /data/user_data/lora/glm4_9B_chat_review_1000_lora')
+# os.system('git clone https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat.git /data/user_data/model/glm-4-9b-chat')
+# os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/glm4_9B_chat_review_1000_lora.git /data/user_data/lora/glm4_9B_chat_review_1000_lora')
 
-os.system('git clone https://www.modelscope.cn/qwen/qwen2-7b-instruct.git /data/user_data/model/qwen2-7b-instruct')
-os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/Qwen2_7B_instruct_1000_lora.git /data/user_data/lora/Qwen2_7B_instruct_1000_lora')
+# os.system('git clone https://www.modelscope.cn/qwen/qwen2-7b-instruct.git /data/user_data/model/qwen2-7b-instruct')
+# os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/Qwen2_7B_instruct_1000_lora.git /data/user_data/lora/Qwen2_7B_instruct_1000_lora')
 
-os.system('git clone https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat.git /data/user_data/model/internlm2_5-20b-chat')
-os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/internlm2_5_20B_chat_1500_lora.git /data/user_data/lora/internlm2_5_20B_chat_1500_lora')
+# os.system('git clone https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat.git /data/user_data/model/internlm2_5-20b-chat')
+# os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/internlm2_5_20B_chat_1500_lora.git /data/user_data/lora/internlm2_5_20B_chat_1500_lora')
 
-os.system('git clone https://www.modelscope.cn/llm-research/gemma-2-9b-it.git /data/user_data/model/gemma-2-9b-it')
-os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/gemma-2-9b-it_review_1000_lora.git /data/user_data/lora/gemma-2-9b-it_review_1000_lora')
+# os.system('git clone https://www.modelscope.cn/llm-research/gemma-2-9b-it.git /data/user_data/model/gemma-2-9b-it')
+# os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/NumberJys/gemma-2-9b-it_review_1000_lora.git /data/user_data/lora/gemma-2-9b-it_review_1000_lora')
 
 
 """
