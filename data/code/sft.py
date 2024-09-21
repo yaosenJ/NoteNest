@@ -228,39 +228,43 @@ def train_gemma2(data_output_path,model_input_dir,model_output_dir):
 )
     trainer.train()
 
-if __name__ == "__main__":
-    os.system('apt install git')
-    os.system('apt install git-lfs')
+# if __name__ == "__main__":
+#     os.system('apt install git')
+#     os.system('apt install git-lfs')
     
-    os.system('git clone https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat.git /data/user_data/model/glm-4-9b-chat')
+#     os.system('git clone https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat.git /data/user_data/model/glm-4-9b-chat')
    
-    os.system('git clone https://www.modelscope.cn/qwen/qwen2-7b-instruct.git /data/user_data/model/qwen2-7b-instruct')
+#     os.system('git clone https://www.modelscope.cn/qwen/qwen2-7b-instruct.git /data/user_data/model/qwen2-7b-instruct')
    
-    os.system('git clone https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat.git /data/user_data/model/internlm2_5-20b-chat')
+#     os.system('git clone https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat.git /data/user_data/model/internlm2_5-20b-chat')
 
-    os.system('git clone https://www.modelscope.cn/llm-research/gemma-2-9b-it.git /data/user_data/model/gemma-2-9b-it')
+#     os.system('git clone https://www.modelscope.cn/llm-research/gemma-2-9b-it.git /data/user_data/model/gemma-2-9b-it')
    
     input_path = '/data/raw_data/train.csv'
     data_output_path = '/data/user_data/train_data.csv'
     
     data_process(input_path,data_output_path)
+    
     glm4_model_path = '/data/user_data/model/glm-4-9b-chat'
-    glm4_lora_path = '/data/user_data/lora/glm4'
+    glm4_lora_path = '/data/user_data/sft_lora/glm4'
     # glm4_lora_path = '/group_share/temp'
     train_glm4(data_output_path,model_input_dir=glm4_model_path,model_output_dir=glm4_lora_path)
     torch.cuda.empty_cache()
+    
     qwen2_model_path = '/data/user_data/model/qwen2-7b-instruct'
-    qwen2_lora_path = '/data/user_data/lora/qwen2'
+    qwen2_lora_path = '/data/user_data/sft_lora/qwen2'
     # qwen2_lora_path = '/group_share/temp1'
     train_qwen2(data_output_path,model_input_dir=qwen2_model_path,model_output_dir=qwen2_lora_path)
     torch.cuda.empty_cache()
+    
     internlm2_5_model_path = '/data/user_data/model/internlm2_5-20b-chat'
-    internlm2_5_lora_path = '/data/user_data/lora/internlm2_5'
+    internlm2_5_lora_path = '/data/user_data/sft_lora/internlm2_5'
     # internlm2_5_lora_path = '/group_share/temp2'
     train_internlm2_5(data_output_path,model_input_dir=internlm2_5_model_path,model_output_dir=internlm2_5_lora_path)
     torch.cuda.empty_cache()
+    
     gemma2_model_path = '/data/user_data/model/gemma-2-9b-it'
-    gemma2_lora_path = '/data/user_data/lora/gemma2'
+    gemma2_lora_path = '/data/user_data/sft_lora/gemma2'
     # gemma2_lora_path = '/group_share/temp4'
     train_gemma2(data_output_path,model_input_dir=gemma2_model_path,model_output_dir=gemma2_lora_path)
     torch.cuda.empty_cache()
