@@ -19,11 +19,20 @@
                          |-- qwen2-7b-instruct
                          |-- internlm2_5-20b-chat
                          |-- gemma-2-9b-it
-                |-- lora  # 模型微调的lora文件
+                |-- lora  # 模型已微调的lora文件
                          |-- glm4_9B_chat_review_1000_lora  # checkpoint:1000steps
                          |-- Qwen2_7B_instruct_1000_lora    # checkpoint:1000steps
                          |-- internlm2_5_20B_chat_1500_lora  # checkpoint:1500steps
                          |-- gemma-2-9b-it_review_1000_lora  # checkpoint:1000steps
+                |-- sft_lora  # 模型微调过程中产生的lora文件
+                         |-- glm4
+                                |-- checkpoint-1000  #最优步数
+                         |-- qwen2
+                                |-- checkpoint-1000  #最优步数
+                         |-- internlm2_5
+                                |-- checkpoint-1500  #最优步数
+                         |-- gemma2
+                                |-- checkpoint-1000  #最优步数
                 |-- glm4_9b_1000.csv  # 使用微调好的glm4_9b模型推理生成文件
                 |-- qwen2_7b_1000.csv  # 使用微调好的qwen2_7b模型推理生成文件
                 |-- internlm2.5_20b_1500.csv   # 使用微调好的internlm2.5_20b模型推理生成文件
