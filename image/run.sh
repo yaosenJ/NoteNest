@@ -28,18 +28,27 @@ if [[ "$(docker images -q $DOCKER_IMAGE 2> /dev/null)" == "" ]]; then
 
     # 检查 tar 文件是否存在
     if [ -f "$TAR_FILE" ]; then
+        # 导入 Docker 镜像
         docker load -i $TAR_FILE
-        echo "镜像导入成功！"
+        
+        # 获取刚刚导入的镜像 ID
+        IMPORTED_IMAGE_ID=$(docker images -q | head -n 1)
+
+        # 将导入的镜像重命名为 'test:latest'
+        docker tag $IMPORTED_IMAGE_ID $DOCKER_IMAGE:latest
+        
+        echo "镜像已导入并重命名为 'test:latest'。"
     else
         echo "未找到 tar 文件：$TAR_FILE，请确保 tar 文件存在于 images 目录下。"
         exit 1
     fi
 else
-    echo "Docker 镜像已存在，跳过导入步骤。"
+    echo "Docker 镜像 'test' 已存在，跳过导入步骤。"
 fi
 
 # 运行 Docker 容器，挂载 data 目录并使用所有 GPU
 docker run --gpus all \
+    --pull=never \
     --mount type=bind,source=$DATA_DIR,target=/data \
     $DOCKER_IMAGE \
     bash -c "cd /data/code && python main.py"
