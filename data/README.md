@@ -82,14 +82,27 @@ python /data/code/main.py
 
 ## 模型说明
 
-当运行sft脚本，会依次下载如下模型。
-- glm-4-9b-chat    
-- qwen2-7b-instruct
-- internlm2_5-20b-chat
-- gemma-2-9b-it
+当运行sft脚本，会依次下载如下模型。并分别下载到 **/data/user_data/model/glm-4-9b-chat**、**/data/user_data/model/qwen2-7b-instruct**、**/data/user_data/model/internlm2_5-20b-chat**、**/data/user_data/model/gemma-2-9b-it**
+- glm-4-9b-chat    [https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat](https://www.modelscope.cn/ZhipuAI/glm-4-9b-chat)
+- qwen2-7b-instruct   [https://www.modelscope.cn/qwen/qwen2-7b-instruct](https://www.modelscope.cn/qwen/qwen2-7b-instruct)
+- internlm2_5-20b-chat  [https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat](https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat)
+- gemma-2-9b-it  [https://www.modelscope.cn/llm-research/gemma-2-9b-it](https://www.modelscope.cn/llm-research/gemma-2-9b-it)
 
+在微调后，分别选择glm-4-9b-chat的checkpoint-1000,qwen2-7b-instruct的checkpoint-1000，internlm2_5-20b-chat的checkpoint-1500，gemma-2-9b-it的checkpoint-1500
+最后上传到
+- [https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora](https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora)
+- [https://www.modelscope.cn/models/NumberJys/Qwen2_7B_instruct_1000_lora](https://www.modelscope.cn/models/NumberJys/Qwen2_7B_instruct_1000_lora)
+- [https://www.modelscope.cn/models/NumberJys/internlm2_5_20B_chat_1500_lora](https://www.modelscope.cn/models/NumberJys/internlm2_5_20B_chat_1500_lora)
+- [https://www.modelscope.cn/models/NumberJys/gemma-2-9b-it_review_1000_lora](https://www.modelscope.cn/models/NumberJys/gemma-2-9b-it_review_1000_lora)
 
+若推理时，注销官网模型下载的代码，因为在微调的时候已经下载，所以只需要下载上面上传的lora文件即可。注意：若直接推理，不在重新微调，就不需要注释。
 
+```python
+conda create -n llm python=3.10
+conda activate llm
+pip install pandas transformers peft accelerate sentencepiece datasets tiktoken openpyxl protobuf einops
+python /data/code/main.py
+```
 
 ### 结果输出
 
