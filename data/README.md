@@ -75,8 +75,6 @@ python /data/code/main.py
 模型有监督微调脚本，用于模型的lora微调。
 
 ## 数据说明
-
-
 - 训练数据：`train.csv`
   A榜训练数据，用于模型训练
 - 测试数据：`test-B.xlsx`
@@ -84,11 +82,16 @@ python /data/code/main.py
 
 ## 模型说明
 
+当运行sft脚本，会依次下载如下模型。
+- glm-4-9b-chat    
+- qwen2-7b-instruct
+- internlm2_5-20b-chat
+- gemma-2-9b-it
 
 
 
 
 ### 结果输出
 
-推理后的结果文件将输出到 **/data/prediction_result/result.csv**
+四路投票推理后的结果文件将输出到 **/data/prediction_result/result.csv**
 
