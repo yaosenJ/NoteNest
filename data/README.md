@@ -61,6 +61,9 @@ conda activate llm
 pip install pandas transformers peft accelerate sentencepiece datasets tiktoken openpyxl protobuf einops
 python /data/code/main.py
 ```
+推理策略：
+- 依次使用gemma2_9b、qwen2_7b、internlm2.5_20b、glm4_9b模型进行推理，将结果保存到对应文件中，最后使用四路投票策略，将四个模型的结果进行投票，得到最终结果。
+- 每个模型推理结束，使用`torch.cuda.empty_cache()`释放显存，继续下个模型推理。
 
 ## 代码说明
 
@@ -98,6 +101,11 @@ python /data/code/main.py
 - internlm2_5-20b-chat  [https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat](https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat)
 - gemma-2-9b-it  [https://www.modelscope.cn/llm-research/gemma-2-9b-it](https://www.modelscope.cn/llm-research/gemma-2-9b-it)
 
+训练策略：
+- 依次使用gemma2_9b、qwen2_7b、internlm2.5_20b、glm4_9b模型进行训练。
+- 每个模型训练结束，使用`torch.cuda.empty_cache()`释放显存，继续下个模型训练。
+- 每个模型训练结束，将模型checkpoint保存到对应模型目录下。
+  
 在微调后，分别选择glm-4-9b-chat的checkpoint-1000,qwen2-7b-instruct的checkpoint-1000，internlm2_5-20b-chat的checkpoint-1500，gemma-2-9b-it的checkpoint-1000
 最后上传到
 - [https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora](https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora)
