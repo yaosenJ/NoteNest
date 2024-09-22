@@ -6,8 +6,9 @@
 
 ```bash
 |-- image
-        |-- 打包后的docker镜像
-        |-- run.sh
+        |-- docker.tar  #打包后的docker镜像
+        |-- run_sft.sh  #一键训练脚本
+        |-- run_infer.sh  #一键推理脚本
         |-- README.md
 |-- data
         |-- raw_data
@@ -19,7 +20,7 @@
                          |-- qwen2-7b-instruct
                          |-- internlm2_5-20b-chat
                          |-- gemma-2-9b-it
-                |-- lora  # 模型已微调的lora文件
+                |-- lora  # 模型已微调好的lora文件
                          |-- glm4_9B_chat_review_1000_lora  # checkpoint:1000steps
                          |-- Qwen2_7B_instruct_1000_lora    # checkpoint:1000steps
                          |-- internlm2_5_20B_chat_1500_lora  # checkpoint:1500steps
@@ -97,7 +98,7 @@ python /data/code/main.py
 - internlm2_5-20b-chat  [https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat](https://www.modelscope.cn/Shanghai_AI_Laboratory/internlm2_5-20b-chat)
 - gemma-2-9b-it  [https://www.modelscope.cn/llm-research/gemma-2-9b-it](https://www.modelscope.cn/llm-research/gemma-2-9b-it)
 
-在微调后，分别选择glm-4-9b-chat的checkpoint-1000,qwen2-7b-instruct的checkpoint-1000，internlm2_5-20b-chat的checkpoint-1500，gemma-2-9b-it的checkpoint-1500
+在微调后，分别选择glm-4-9b-chat的checkpoint-1000,qwen2-7b-instruct的checkpoint-1000，internlm2_5-20b-chat的checkpoint-1500，gemma-2-9b-it的checkpoint-1000
 最后上传到
 - [https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora](https://www.modelscope.cn/models/NumberJys/glm4_9B_chat_review_1000_lora)
 - [https://www.modelscope.cn/models/NumberJys/Qwen2_7B_instruct_1000_lora](https://www.modelscope.cn/models/NumberJys/Qwen2_7B_instruct_1000_lora)
@@ -122,5 +123,14 @@ os.system('git clone https://oauth2:LAAN_szcahZCFtryFxBs@www.modelscope.cn/Numbe
 
 ### 结果输出
 
+投票机制：
+
+- 多数票：如果某个分数获得了 3 票或 4 票（即 most_common[0][1] >= 3），将该分数作为最终预测结果。
+- 平局：如果有两个分数各获得了 2 票（即 most_common[0][1] == 2 且 most_common[1][1] == 2），则使用 glm4 的预测分数作为默认值。
+- 没有平局：如果只有一个分数获得了 2 票，将其作为最终预测结果。
+- 无多数票：如果没有明显的多数票，则默认使用 glm4 的预测分数作为最终结果。
+
 四路投票推理后的结果文件将输出到 **/data/prediction_result/result.csv**
+
+
 
