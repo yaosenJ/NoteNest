@@ -57,6 +57,9 @@ def main1():
     submit = test_df[['数据编号', '评判维度', '预测分数']]
     os.makedirs(os.path.dirname(path1), exist_ok=True)
     submit.to_csv(path1, index=False)
+    del model
+    del tokenizer
+
 
 def main2():   
     qwen2_model_path = '/data/user_data/model/qwen2-7b-instruct'
@@ -82,6 +85,8 @@ def main2():
     submit = test_df[['数据编号', '评判维度', '预测分数']]
     os.makedirs(os.path.dirname(path2), exist_ok=True)
     submit.to_csv(path2, index=False)
+    del model
+    del tokenizer
 
 def main3():   
     internlm2_5_model_path = '/data/user_data/model/internlm2_5-20b-chat'
@@ -107,6 +112,8 @@ def main3():
     submit = test_df[['数据编号', '评判维度', '预测分数']]
     os.makedirs(os.path.dirname(path3), exist_ok=True)
     submit.to_csv(path3, index=False)
+    del model
+    del tokenizer
 
 def main4():   
     gemma2_model_path = '/data/user_data/model/gemma-2-9b-it'
@@ -132,6 +139,8 @@ def main4():
     submit = test_df[['数据编号', '评判维度', '预测分数']]
     os.makedirs(os.path.dirname(path4), exist_ok=True)
     submit.to_csv(path4, index=False)
+    del model
+    del tokenizer
 
 def voted_results(path1,path2,path3,path4):
     gemma2_df = pd.read_csv(path1,encoding='utf-8', encoding_errors='ignore')
