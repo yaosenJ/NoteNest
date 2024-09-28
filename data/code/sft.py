@@ -119,6 +119,8 @@ def train_glm4(data_output_path,model_input_dir,model_output_dir):
     data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True),
 )
     trainer.train()
+    del model
+    del tokenizer
 
 def train_qwen2(data_output_path,model_input_dir,model_output_dir):
     df = pd.read_json(data_output_path)
@@ -154,6 +156,8 @@ def train_qwen2(data_output_path,model_input_dir,model_output_dir):
     data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True),
 )
     trainer.train()
+    del model
+    del tokenizer
 
 
 def train_internlm2_5(data_output_path,model_input_dir,model_output_dir):
@@ -190,6 +194,8 @@ def train_internlm2_5(data_output_path,model_input_dir,model_output_dir):
     data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True),
 )
     trainer.train()
+    del model
+    del tokenizer
 
 def train_gemma2(data_output_path,model_input_dir,model_output_dir):
     df = pd.read_json(data_output_path)
@@ -227,6 +233,8 @@ def train_gemma2(data_output_path,model_input_dir,model_output_dir):
     data_collator=DataCollatorForSeq2Seq(tokenizer=tokenizer, padding=True),
 )
     trainer.train()
+    del model
+    del tokenizer
 
 # if __name__ == "__main__":
 #     os.system('apt install git')
