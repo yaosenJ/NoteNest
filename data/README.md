@@ -63,7 +63,7 @@ python /data/code/main.py
 ```
 推理策略：
 - 依次使用gemma2_9b、qwen2_7b、internlm2.5_20b、glm4_9b模型进行推理，将结果保存到对应文件中，最后使用四路投票策略，将四个模型的结果进行投票，得到最终结果。
-- 每个模型推理结束，使用`torch.cuda.empty_cache()`释放显存，继续下个模型推理。
+- 每个模型推理结束，使用`torch.cuda.empty_cache()`,`del model`,`del tokenizer`释放显存，继续下个模型推理。
 
 ## 代码说明
 
