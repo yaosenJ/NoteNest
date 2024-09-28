@@ -103,7 +103,7 @@ python /data/code/main.py
 
 训练策略：
 - 依次使用gemma2_9b、qwen2_7b、internlm2.5_20b、glm4_9b模型进行训练。
-- 每个模型训练结束，使用`torch.cuda.empty_cache()`释放显存，继续下个模型训练。
+- 每个模型训练结束，使用`torch.cuda.empty_cache()`,`del model`,`del tokenizer`释放显存，继续下个模型训练。
 - 每个模型训练结束，将模型checkpoint保存到对应模型目录下。
   
 在微调后，分别选择glm-4-9b-chat的checkpoint-1000,qwen2-7b-instruct的checkpoint-1000，internlm2_5-20b-chat的checkpoint-1500，gemma-2-9b-it的checkpoint-1000
