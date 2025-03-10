@@ -5,12 +5,9 @@ import numpy as np
 from random import choice
 from tqdm import tqdm
 import model
-import torch 
-from torch.autograd import Variable
+import torch
 #import data_prepare
-import os
 import torch.utils.data as Data
-import torch.nn.functional as F
 
 import time
 torch.backends.cudnn.benchmark = True
@@ -231,8 +228,8 @@ loader = Data.DataLoader(
 
 
 # print("len",len(id2char))
-s_m = model.s_model(len(char2id)+2,CHAR_SIZE,HIDDEN_SIZE).cuda()
-po_m = model.po_model(len(char2id)+2,CHAR_SIZE,HIDDEN_SIZE,num_classes).cuda()
+s_m = model.s_model(len(char2id) + 2, CHAR_SIZE, HIDDEN_SIZE).cuda()
+po_m = model.po_model(len(char2id) + 2, CHAR_SIZE, HIDDEN_SIZE, num_classes).cuda()
 params = list(s_m.parameters())
 
 params += list(po_m.parameters())

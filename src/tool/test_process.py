@@ -144,7 +144,7 @@ phone = "13812345678"
 if re.match(mobile_pattern, phone):
     print("Valid mobile number")
 
-身份证号验证（简化版，不考虑校验位有效性）
+# 身份证号验证（简化版，不考虑校验位有效性）
 id_card_pattern = r'^\d{15}|\d{18}$'
 id_num = "123456789012345678"
 if re.match(id_card_pattern, id_num):
