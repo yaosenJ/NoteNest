@@ -29,6 +29,14 @@ python -m graphrag index --root .\ragtest
 ![](./img/log3.png)
 ![](./img/log4.png)
 
+## 3.graphrag问答
+
+```bash
+graphrag query --root .\ragtest --method local --query "山西代县精诚矿业有限责任公司发生事故原因是什么"
+graphrag query --root .\ragtest --method global --query "山西代县精诚矿业有限责任公司发生事故原因是什么"
+```
+![](./img/log5.png)
+![](./img/log6.png)
 
 ## 错误
 ![](./img/error1.png)
