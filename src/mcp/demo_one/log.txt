@@ -1,0 +1,58 @@
+(llm) C:\Users\jys\Downloads\NoteNest\src\mcp\demo_one>python client.py weather_server.py
+
+已连接到服务器，支持以下工具: ['query_weather']
+
+ MCP 客户端已启动！输入 'quit' 退出
+
+你: 请问上海今天天气怎么样？
+
+
+[Calling tool query_weather with args {'city': 'Shanghai'}]
+
+
+
+ OpenAI: 看起来您在尝试获取上海天气信息时遇到了一个 HTTP 401 错误。这个错误表示“未授权”，通常是因为请求需要身份验证，但没有提供有效的凭据（如 API 密钥、用户名或密码）。
+
+### 可能的原因：
+1. **缺少 API 密钥**：如果您使用的是某个天气服务的 API，可能需要注册并获取一个 API 密钥，然后在请求中正确传递。
+2. **API 密钥无效或过期**：如果您的密钥已过期或被禁用，也会导致 401 错误。
+3. **权限不足**：即使提供了正确的密钥，也可能因为账户权限不足而无法访问某些功能。
+4. **请求格式错误**：可能是请求头或参数配置不正确，导致服务器无法识别您的身份。
+
+---
+
+### 解决方法：
+1. **检查 API 密钥**：
+   - 确保您已经在相关服务提供商（如 OpenWeatherMap、AccuWeather 或其他）注册并获取了有效的 API 密钥。
+   - 将密钥正确添加到请求头或参数中。例如：
+     ```bash
+     curl "https://api.openweathermap.org/data/2.5/weather?q=Shanghai&appid=YOUR_API_KEY"
+     ```
+
+2. **验证请求格式**：
+     Authorization: Bearer YOUR_ACCESS_TOKEN
+     ```
+
+3. **联系服务提供商**：
+   - 如果您确信密钥和请求格式都正确，但仍然收到 401 错误，可以联系 API 提供商的支持团队，确认是否有其他限制或问题。
+
+---
+
+### 如果只是想了解上海今天的天气：
+您可以直接访问一些公开的天气网站或应用，例如：
+- [中国天气网](https://www.weather.com.cn/)
+- [中央气象台](http://www.nmc.cn/)
+- [OpenWeatherMap](https://openweathermap.org/)（需注册）
+
+如果您提供更多细节（如使用的 API 或代码片段），我可以帮助进一步排查问题！
+
+你: 请问上海今天天气怎么样？
+
+
+[Calling tool query_weather with args {'city': 'Shanghai'}]
+
+
+
+ OpenAI: 今天上海的天气是晴朗的，温度为14.92°C，湿度为63%，风速为5 m/s。看起来是个不错的天气，适合外出活动！如果你打算出门，记得根据温度适当增减衣物哦。
+
+你:
