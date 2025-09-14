@@ -219,7 +219,7 @@ class RAGSystem:
 def main():
     """主函数"""
     # 获取API密钥
-    API_KEY = "sk-1bc48ff360614aa7a1b14e7e68171afb"
+    API_KEY = "sk-1bc48ff360614"
     if not API_KEY:
         print("错误: 请设置DASHSCOPE_API_KEY环境变量")
         return
